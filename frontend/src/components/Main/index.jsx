@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import camelize from 'camelize';
+import QS from 'query-string';
 import Main from './Main';
 
 const API = process.env.API || 'http://localhost:5000';
@@ -14,7 +15,7 @@ const initState = {
 
 class MainWrapper extends React.PureComponent {
   state = {
-    filter: 'yesterday',
+    filter: QS.parse(location.search).filter || 'yesterday',
     metrics: {
       yesterday: initState,
     },
@@ -31,7 +32,6 @@ class MainWrapper extends React.PureComponent {
     } = this.state;
     try {
       // Load data once
-      console.log(metrics[filter]);
       if (metrics[filter] && metrics[filter].loaded && !metrics[filter].error) return null;
 
       this.setState(prevState => ({
@@ -70,7 +70,15 @@ class MainWrapper extends React.PureComponent {
     }
   };
 
-  changeFilter = (filter) => this.setState({ filter }, () => this.getData());
+  changeFilter = (filter) => this.setState({ filter }, () => {
+    const allParams = QS.parse(location.search);
+    const newParams = {
+      ...allParams,
+      filter,
+    };
+    window.history.replaceState(filter, `Metrics: ${filter}`,`?${QS.stringify(newParams)}`);
+    this.getData();
+  });
 
   render() {
     const {
