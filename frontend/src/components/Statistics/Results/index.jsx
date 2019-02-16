@@ -29,7 +29,10 @@ function Results({
         <div key={item.field} className={styles.Result}>
           <div className={styles.Point}/>
           <div className={styles.MainInfo}>{item.title}: {roundNumber(statistics[item.field])}%</div>
+          {/*
+          backend is not ready
           <div className={styles.AdditionalInfo}>Average: {roundNumber(statistics[item.avgField])}%</div>
+          */}
         </div>
       ))}
     </div>

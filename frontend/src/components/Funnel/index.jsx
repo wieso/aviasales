@@ -51,7 +51,7 @@ const steps = [
       stats: [
         {
           title: 'CTR',
-          valueField: 'ctrLast',
+          valueField: 'ctr',
           type: 'percent',
         }
       ],
@@ -78,7 +78,7 @@ const steps = [
       stats: [
         {
           title: 'STR',
-          valueField: 'strLast',
+          valueField: 'str',
           type: 'percent',
         },
         {

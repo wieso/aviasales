@@ -30,11 +30,11 @@ def gen_book():
             'funnel': {
                 'bookings_current': stat.get(get_field_with_filter("bookings_current", filter_param)),
                 'bookings_previous': stat.get(get_field_with_filter("bookings_previous", filter_param)),
-                'str_last': stat.get(get_field_with_filter("str_last", filter_param)),
+                'str': stat.get(get_field_with_filter("str", filter_param)),
                 'avg_price': stat.get(get_field_with_filter("avg_price", filter_param)),
                 'clicks_current': stat.get(get_field_with_filter("clicks_current", filter_param)),
                 'clicks_previous': stat.get(get_field_with_filter("clicks_previous", filter_param)),
-                'ctr_last': stat.get(get_field_with_filter("ctr_last", filter_param)),
+                'ctr': stat.get(get_field_with_filter("ctr", filter_param)),
                 'searches_current': stat.get(get_field_with_filter("searches_current", filter_param)),
                 'searches_previous': stat.get(get_field_with_filter("searches_previous", filter_param)),
                 'mobile_pessimizer': stat.get("mobile_pessimizer"),
