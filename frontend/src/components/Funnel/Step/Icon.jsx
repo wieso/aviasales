@@ -1,13 +1,15 @@
 import React from 'react';
 import styles from './index.scss';
-import Cart from '../../../assets/icons/cart.svg';
 import Arrow from '../../../assets/icons/arrowFunnel.svg';
 
-function Icon() {
+function Icon({
+  icon: IconSvg,
+  status,
+}) {
   return (
     <div className={styles.Icon}>
-      <Cart width="28px" height="28px" />
-      <div className={`${styles.Status} ${styles.bad}`} />
+      {!!IconSvg && <IconSvg width="28px" height="28px" />}
+      <div className={`${styles.Status} ${status ? styles.good : styles.bad}`} />
       <Arrow className={styles.Arrow} />
     </div>
   );

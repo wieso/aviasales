@@ -1,18 +1,38 @@
 import React from 'react';
 import styles from './index.scss';
+import { formatNumber, roundNumber } from '../../../utils';
 
-function Description() {
+function Description({
+  description = {},
+  help = [],
+  funnel,
+}) {
   return (
     <div className={styles.Description}>
       <div className={styles.MainDescr}>
-        <div className={styles.Point}>Mobile traffic: 100%</div>
-        <div className={styles.Point}>Web traffic: 100%</div>
+        {description.stats.map(item => (
+          <div key={item.title} className={styles.Point}>
+            {item.title}:
+            {' '}
+            {
+              item.type === 'percent'
+                ? `${roundNumber(funnel[item.valueField])}%`
+                : formatNumber(roundNumber(funnel[item.valueField]))
+            }
+          </div>
+        ))}
       </div>
       <div className={styles.AdditionalDescr}>
-        You get 100% traffic on mobile and desktop devices.
+        {description.info}
       </div>
       <div className={styles.Help}>
-        Help: <span className={styles.link}>Searches</span>, <span className={styles.link}>Pessimisation</span>
+        Help:
+        {' '}
+        {help.map((item, i) => (
+          <React.Fragment key={i}>
+            {i !== 0 && ', '}
+            <a href={item.link} className={styles.link}>{item.title}</a>
+          </React.Fragment>))}
       </div>
     </div>
   );

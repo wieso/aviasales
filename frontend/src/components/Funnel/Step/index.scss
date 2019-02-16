@@ -1,6 +1,7 @@
 @import "../../../assets/styles/variables";
 
 .Step {
+  min-height: 135px;
   display: flex;
 
   &:last-child {
@@ -62,6 +63,7 @@
   margin-left: 20px;
   display: flex;
   flex-direction: column;
+  width: 225px;
 }
 
 .Header {
@@ -128,6 +130,7 @@
 
 .link {
   color: $main-color;
+  text-decoration: none;
 }
 
 .Point {

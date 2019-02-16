@@ -30,8 +30,12 @@
   color: white;
   background-color: $main-color;
   border: 1px solid $main-color;
+  border-right: 0;
 
   &:hover {
     background-color: $main-color;;
+  }
+  &:last-child {
+    border-right: 1px solid $main-color;
   }
 }

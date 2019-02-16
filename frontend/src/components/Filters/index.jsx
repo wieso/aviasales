@@ -15,19 +15,24 @@ const FILTERS = [
     title: 'Yesterday',
   },
   {
-    alias: 'last_3_days',
+    alias: 'last_3days',
     title: 'Last 3 days',
   },
 ];
 
 function Filters({
   className = '',
-  activeFilter = 'yesterday'
+  activeFilter = 'yesterday',
+  changeFilter,
 }) {
   return (
     <div className={`${styles.Filters} ${className}`}>
       {FILTERS.map(filter => (
-        <div key={filter.alias} className={`${styles.Filter} ${activeFilter === filter.alias ? styles.active : ''}`}>
+        <div
+          key={filter.alias}
+          className={`${styles.Filter} ${activeFilter === filter.alias ? styles.active : ''}`}
+          onClick={() => changeFilter(filter.alias)}
+        >
           {filter.title}
         </div>
       ))}
