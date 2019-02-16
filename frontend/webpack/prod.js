@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const autoprefixer = require('autoprefixer');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -10,7 +11,7 @@ module.exports = {
   ],
 
   output: {
-    path: '/',
+    path: path.resolve(__dirname, '../public'),
     filename: 'index.js',
     publicPath: '/',
   },
@@ -21,14 +22,16 @@ module.exports = {
 
   plugins: [
     new HTMLWebpackPlugin({
-      template: path.resolve(__dirname, './src/index.html'),
+      template: path.resolve(__dirname, '../src/index.html'),
     }),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+        API: JSON.stringify(process.env.API),
       },
     }),
     new webpack.NoEmitOnErrorsPlugin(),
+    new MiniCssExtractPlugin({ filename: 'index.css' }),
   ],
 
   module: {
@@ -36,14 +39,16 @@ module.exports = {
       {
         test: /\.jsx?$/,
         loaders: ['babel-loader'],
-        include: path.resolve(__dirname, './src'),
+        include: path.resolve(__dirname, '../src'),
         exclude: /node_modules/,
       },
       {
-        test: /\.s?css$/,
+        test: /\.scss$|\.css$/,
         exclude: [/node_modules/],
         use: [
-          'style-loader',
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
           {
             loader: 'css-loader',
             options: {
@@ -64,7 +69,7 @@ module.exports = {
       {
         test: /\.svg$/,
         loader: 'svg-react-loader',
-      }
+      },
     ],
   },
 };

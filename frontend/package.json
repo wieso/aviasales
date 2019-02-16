@@ -6,8 +6,8 @@
     "node": ">=8"
   },
   "scripts": {
-    "dev": "webpack-dev-server -d --config ./webpack.config.js --hot --inline",
-    "build": "webpack -p --config ./webpack.config.js"
+    "dev": "webpack-dev-server -d --config ./webpack/dev.js --hot --inline",
+    "build": "webpack -p --config ./webpack/prod.js"
   },
   "babel": {
     "presets": [
