@@ -66,3 +66,13 @@
 .grey {
   background-color: $second-text-color;
 }
+
+@media (max-width: 466px) {
+  .Legend {
+    flex-wrap: wrap;
+  }
+  .Item {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

@@ -66,3 +66,13 @@
   text-align: center;
   font-weight: 600;
 }
+
+@media (max-width: 466px) {
+  .MainWrapper {
+    padding: 20px;
+  }
+
+  .Main {
+    padding: 15px;
+  }
+}
