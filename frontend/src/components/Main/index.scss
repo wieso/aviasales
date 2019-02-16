@@ -1,0 +1,38 @@
+@import "../../assets/styles/variables";
+
+.MainWrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  color: $main-text-color;
+  padding: 40px;
+}
+
+.Main {
+  background-color: white;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  padding: 40px;
+  width: 100%;
+  max-width: 740px;
+}
+
+.Header {
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.Filter {
+  margin-top: 25px;
+}
+
+.Statistics {
+  margin-top: 45px;
+}
+
+.Funnel {
+  margin-top: 45px;
+}

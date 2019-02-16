@@ -1,0 +1,35 @@
+@import "../../../assets/styles/variables";
+
+.Results {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Result {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-left: 18px;
+  padding-right: 15px;
+}
+
+.Point {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  background-color: $success-color;
+}
+
+.MainInfo {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.AdditionalInfo {
+  font-size: 12px;
+  margin-top: 5px;
+  color: $second-text-color;
+}

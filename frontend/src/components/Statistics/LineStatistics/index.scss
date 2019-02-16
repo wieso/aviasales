@@ -1,0 +1,68 @@
+@import "../../../assets/styles/variables";
+
+.LineStatistics {
+  display: flex;
+  flex-direction: column;
+}
+
+.Line {
+  width: 100%;
+  display: flex;
+  margin-top: 15px;
+}
+
+.LinePart {
+  flex-shrink: 0;
+  height: 8px;
+  border-right: 1px solid $border-color;
+
+  &:first-child {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+  }
+
+  &:last-child {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-right: 0;
+  }
+}
+
+.Legend {
+  display: flex;
+  margin-top: 20px;
+}
+
+.Item {
+  display: flex;
+  margin-right: 30px;
+}
+
+.LegendIcon {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  margin-right: 5px;
+  flex-shrink: 0;
+}
+
+.Value {
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.yellow {
+  background-color: $warning-color;
+}
+
+.pink {
+  background-color: $pink-color;
+}
+
+.blue {
+  background-color: $main-color;
+}
+
+.grey {
+  background-color: $second-text-color;
+}

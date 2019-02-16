@@ -1,0 +1,37 @@
+@import "../../assets/styles/variables";
+.Filters {
+  display: flex;
+}
+
+.Filter {
+  padding: 8px 15px;
+  background: white;
+  border: 1px solid $border-color;
+  border-right: 0;
+  cursor: pointer;
+
+  &:first-child {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+  }
+
+  &:last-child {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-right: 1px solid $border-color;
+  }
+
+  &:hover {
+    background-color: darken(white, 5%);
+  }
+}
+
+.active {
+  color: white;
+  background-color: $main-color;
+  border: 1px solid $main-color;
+
+  &:hover {
+    background-color: $main-color;;
+  }
+}

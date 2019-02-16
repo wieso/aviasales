@@ -1,0 +1,135 @@
+@import "../../../assets/styles/variables";
+
+.Step {
+  display: flex;
+
+  &:last-child {
+    .Arrow {
+      display: none;
+    }
+    .Info {
+      border-bottom: 0;
+    }
+  }
+}
+
+.Info {
+  display: flex;
+  padding-bottom: 35px;
+  border-bottom: 1px solid $border-color;
+}
+
+.Icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: $main-color;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.Status {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50px;
+  border: 2px solid white;
+}
+
+.Arrow {
+  position: absolute;
+  top: 53px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 10px;
+  height: 78px;
+}
+
+.good {
+  background-color: $success-color;
+}
+
+.bad {
+  background-color: $fail-color;
+}
+
+.Title {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Header {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.Percents {
+  color: white;
+  font-weight: 400;
+  font-size: 12px;
+  border-radius: 10px;
+  padding: 2px 6px;
+}
+
+.Results {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  font-weight: 400;
+}
+
+.Row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.Value {
+  font-size: 20px;
+}
+
+.Period {
+  margin-left: 10px;
+  font-size: 12px;
+}
+
+.prev {
+  color: $second-text-color;
+}
+
+.Description {
+  display: flex;
+  flex-direction: column;
+  margin-left: 80px;
+}
+
+.MainDescr {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.AdditionalDescr {
+  color: $second-text-color;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.Help {
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.link {
+  color: $main-color;
+}
+
+.Point {
+  margin-bottom: 10px;
+}
