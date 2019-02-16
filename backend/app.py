@@ -22,7 +22,7 @@ def gen_book():
 
     filter_param = request.args.get('filter')
     if filter_param not in FILTERS:
-        return jsonify({"data": {}})
+        return jsonify({"data": None})
 
     stat = data['data'][0]
     return jsonify({
