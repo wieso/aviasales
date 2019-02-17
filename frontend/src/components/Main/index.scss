@@ -1,10 +1,13 @@
 @import "../../assets/styles/variables";
 
 .MainWrapper {
+  background-color: $background-color;
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
   color: $main-text-color;
   padding: 40px;
+  height: 100vh;
+  overflow: auto;
 }
 
 .Main {
@@ -15,7 +18,7 @@
   padding: 40px;
   width: 100%;
   max-width: 740px;
-  min-height: 760px;
+  min-height: 700px;
 }
 
 .Header {

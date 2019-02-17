@@ -3,7 +3,7 @@ import styles from './index.scss';
 import Icon from './Icon';
 import Title from './Title';
 import Description from './Description';
-import { roundNumber } from '../../../utils';
+import { calculatePercent } from '../../../utils';
 
 function Step({
   className = '',
@@ -17,7 +17,7 @@ function Step({
   help,
   funnel,
 }) {
-  const status = roundNumber((currValue / prevValue - 1) * 100) >= 0;
+  const status = calculatePercent(currValue, prevValue) >= 0;
   return (
     <div className={`${styles.Step} ${className}`}>
       <Icon icon={icon} status={status} />

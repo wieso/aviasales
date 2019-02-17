@@ -3,6 +3,7 @@ import axios from 'axios';
 import camelize from 'camelize';
 import QS from 'query-string';
 import Main from './Main';
+import { FILTERS, DEFAULT_FILTER } from '../../constants';
 
 const API = process.env.API || 'http://localhost:5000';
 
@@ -15,9 +16,9 @@ const initState = {
 
 class MainWrapper extends React.PureComponent {
   state = {
-    filter: QS.parse(location.search).filter || 'yesterday',
+    filter: QS.parse(location.search).filter || DEFAULT_FILTER,
     metrics: {
-      yesterday: initState,
+      [DEFAULT_FILTER]: initState,
     },
   };
 
@@ -72,19 +73,14 @@ class MainWrapper extends React.PureComponent {
 
   changeFilter = (filter) => this.setState({ filter }, () => {
     const allParams = QS.parse(location.search);
-    const newParams = {
-      ...allParams,
-      filter,
-    };
+    const newParams = { ...allParams, filter }; // it's for saving other query params, e.g. utm
+    // it's for saving the tab sate after loading
     window.history.replaceState(filter, `Metrics: ${filter}`,`?${QS.stringify(newParams)}`);
     this.getData();
   });
 
   render() {
-    const {
-      metrics,
-      filter,
-    } = this.state;
+    const { metrics, filter } = this.state;
 
     return (
       <Main

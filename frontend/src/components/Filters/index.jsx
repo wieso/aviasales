@@ -1,28 +1,10 @@
 import React from 'react';
 import styles from './index.scss';
-
-const FILTERS = [
-  {
-    alias: 'last_hour',
-    title: 'Last hour',
-  },
-  {
-    alias: 'today',
-    title: 'Today',
-  },
-  {
-    alias: 'yesterday',
-    title: 'Yesterday',
-  },
-  {
-    alias: 'last_3days',
-    title: 'Last 3 days',
-  },
-];
+import { FILTERS, DEFAULT_FILTER } from '../../constants';
 
 function Filters({
   className = '',
-  activeFilter = 'yesterday',
+  activeFilter = DEFAULT_FILTER,
   changeFilter,
 }) {
   return (

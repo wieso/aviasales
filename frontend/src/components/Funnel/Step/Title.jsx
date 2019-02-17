@@ -1,22 +1,24 @@
 import React from 'react';
 import styles from './index.scss';
-import { roundNumber, formatNumber } from '../../../utils';
+import { calculatePercent, formatNumber } from '../../../utils';
 
 function Title({
   title='',
-  prevValue=1,
+  prevValue=0,
   currValue=0,
   filter='',
   prevFilter='',
 }) {
-  const percent = roundNumber((currValue / prevValue - 1) * 100);
+  const percent = calculatePercent(currValue, prevValue);
   return (
     <div className={styles.Title}>
       <h2 className={styles.Header}>
         {title}
         {' '}
-        {percent !== 100
-        && <span className={`${styles.Percents} ${percent > 0 ? styles.good : styles.bad}`}>{percent}%</span>}
+        {
+          percent !== 0
+          && <span className={`${styles.Percents} ${percent > 0 ? styles.good : styles.bad}`}>{percent}%</span>
+        }
       </h2>
       <div className={styles.Results}>
         <div className={styles.Row}>

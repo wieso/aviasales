@@ -2,14 +2,14 @@ import React from 'react';
 import styles from './index.scss';
 import { formatNumber } from '../../../utils';
 
-const colors = ['yellow', 'pink', 'blue', 'grey'];
+const colorsModificator = ['yellow', 'pink', 'blue', 'grey'];
 
 function prepareData(data) {
   const sum = data.reduce((acc, item) => item.count + acc, 0);
   return data.map((item, i) => ({
     ...item,
     legend: item.code ? `Error ${item.code}` : 'Other',
-    modificator: colors[i % colors.length],
+    modificator: colorsModificator[i % colorsModificator.length],
     percent: Math.round(item.count / sum * 100),
   }));
 }
