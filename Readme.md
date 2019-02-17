@@ -1,9 +1,28 @@
-## Тестовое задание в команду гейтов (full-stack)
+## Test task to the gate team (full-stack)
 ---
 
-Запуск сделан через docker-compose:
+###Start:
+ 
+**docker-compose:**
 
 ```docker-compose up -d --build```
 
-По умолчанию, сервис запустится по адресу "http://localhost:8888"
-Для изменения портов необходимо править docker-compose.yml
+By default the service will launched on [http://localhost:8888]("http://localhost:8888")
+
+**Local dev**
+
+Frontend:
+```
+cd frontend
+yarn install && yarn dev
+```
+
+Backend:
+```
+cd backend
+pip install pipenv
+pipenv install
+FLASK_APP=app.py flask run
+```
+
+By default the service will launched on [http://localhost:8080]("http://localhost:8080")
